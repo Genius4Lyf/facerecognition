@@ -13,44 +13,6 @@ import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 // NPM PACKAGES ON THIS PROJECT......
 import ParticlesBg from 'particles-bg';
 
-// const returnClarifaiRequestOption = (imageURL) => {
-//     // Your PAT (Personal Access Token) can be found in the portal under Authentification
-//     const PAT = '4115039d463b4da7bb839832c857793f';
-//     // Specify the correct user_id/app_id pairings
-//     // Since you're making inferences outside your app's scope
-//     const USER_ID = 'danny007';       
-//     const APP_ID = 'face';
-//     // Change these to whatever model and image URL you want to use
-//     const IMAGE_URL = imageURL;
-
-//     const raw = JSON.stringify({
-//         "user_app_id": {
-//             "user_id": USER_ID,
-//             "app_id": APP_ID
-//         },
-//         "inputs": [
-//             {
-//                 "data": {
-//                     "image": {
-//                         "url": IMAGE_URL
-//                     }
-//                 }
-//             }
-//         ]
-//     });
-
-//     const requestOptions = {
-//         method: 'POST',
-//         headers: {
-//             'Accept': 'application/json',
-//             'Authorization': 'Key ' + PAT
-//         },
-//         body: raw
-//     };
-
-//     return requestOptions;
-// }
-
 const initialState = {
     input: '',
     imageURL: '',
