@@ -73,7 +73,7 @@ class App extends Component {
 
         // fetch("https://api.clarifai.com/v2/models/face-detection/outputs", returnClarifaiRequestOption(this.state.input))
         //     .then(response => response.json())
-            fetch('http://localhost:3001/imageurl', {
+            fetch('https://zealous-unleashed-frown.glitch.me/imageurl', {
                 method: "post",
                 headers: {"Content-Type": "application/json"},
             // the body contains what you have in the state or what you want to send to the server
@@ -90,7 +90,7 @@ class App extends Component {
                 // by using the put method to update the user id and in so doing sends an object using JSON.stringify.
                 // and when the server receives this JSON object. Another line of runs by checking if the id sent through JSON
                 // matches the users id that was iterated using the forEach method
-                    fetch('http://localhost:3001/image', {
+                    fetch('https://zealous-unleashed-frown.glitch.me/image', {
                         method: "put",
                         headers: {"Content-Type": "application/json"},
                     // the body contains what you have in the state or what you want to send to the server
