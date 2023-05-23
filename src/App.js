@@ -3,15 +3,10 @@ import './App.css';
 // REACT FILES ON THIS PROJECT.......
 import React, {Component} from 'react';
 // COMPONENTS FILES ON THIS PROJECT.....
-import Navigation from './components/Navigation/Navigation';
-// import Logo from './components/Logo/Logo';
-import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
-import Rank from './components/Rank/Rank';
-import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Home from './components/Home/Home';
-// NPM PACKAGES ON THIS PROJECT......
 import SignInRegisterDisplay from './components/SignIn&RegisterDisplay/SignIn&RegisterDisplay';
 import Dashboard from './components/Dashboard/Dasboard';
+
 
 const initialState = {
     input: '',
