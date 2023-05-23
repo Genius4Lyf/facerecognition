@@ -9,8 +9,10 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Home from './components/Home/Home';
+import Spinner from './components/Spinner/Spinner';
 // NPM PACKAGES ON THIS PROJECT......
 import SignInRegisterDisplay from './components/SignIn&RegisterDisplay/SignIn&RegisterDisplay';
+import Dashboard from './components/Dashboard/Dasboard';
 
 const initialState = {
     input: '',
@@ -32,9 +34,16 @@ const initialState = {
 class App extends Component {
     constructor() {
         super();
-        this.state = initialState
+            this.state = initialState
         }
     
+        componentDidMount() {
+            // Simulating an asynchronous operation
+            setTimeout(() => {
+              this.setState({ isLoading: false });
+            }, 3000);
+          }
+
     handleClickWatch = (boolean) => {
         this.setState({watch: boolean})
         this.setState({route: 'SignIn&RegisterDisplay'})
@@ -137,33 +146,36 @@ class App extends Component {
         return(
             <div className='app-container'>
                 {/* signing into the app requires a conditional statement */}
-                { this.state.route === 'home' ? 
-                    <div>
-                        <Navigation
-                            isSignedIn={this.state.isSignedIn}
-                            onRouteChange={this.onRouteChange}
-                            handleClickWatch={this.handleClickWatch}
-                            watch={this.state.watch}
+                <div>
+                    { this.state.route === 'home' ? 
+                        <div>
+                            <Dashboard
+                                /*FaceRecognition*/
+                                isSignedIn={this.state.isSignedIn}
+                                onRouteChange={this.onRouteChange}
+                                handleClickWatch={this.handleClickWatch}
+                                watch={this.state.watch}
+                                /*Rank*/
+                                name={this.state.user.name} entries={this.state.user.entries}
+                                /*ImageLinkForm*/
+                                onInputChange={this.onInputChange} 
+                                onPictureSubmit={this.onPictureSubmit}
+                                /*FaceRecognition*/
+                                box={this.state.box} imageURL={this.state.imageURL}
+                            />
+                        </div>
+                    :
+                    (
+                        this.state.route === 'homepage'
+                        ? <Home handleClickWatch={this.handleClickWatch} />
+                        : <SignInRegisterDisplay
+                        loadUser={this.loadUser}
+                        onRouteChange={this.onRouteChange}
+                        handleClickWatch={this.handleClickWatch}
+                        watch={this.state.watch}
                         />
-                        {/* <Logo /> */}
-                        <Rank name={this.state.user.name} entries={this.state.user.entries} />
-                        <ImageLinkForm
-                        onInputChange={this.onInputChange}
-                        onPictureSubmit={this.onPictureSubmit}/>
-                        <FaceRecognition box={this.state.box} imageURL={this.state.imageURL} />
-                    </div>
-                :
-                (
-                    this.state.route === 'homepage'
-                    ? <Home handleClickWatch={this.handleClickWatch} />
-                    : <SignInRegisterDisplay
-                    loadUser={this.loadUser}
-                    onRouteChange={this.onRouteChange}
-                    handleClickWatch={this.handleClickWatch}
-                    watch={this.state.watch}
-                    />
-                )
-            }
+                    )}
+                </div>
             </div>
         )
     }
