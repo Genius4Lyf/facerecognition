@@ -1,0 +1,34 @@
+.nav-m {
+    margin-bottom: 70px;
+}
+.nav-ms {
+    margin-bottom: 20px;
+}
+.nav-bg{
+    border: 1px solid rgba(0,0,0,.5);
+}
+
+text{
+    color: rgba(0,0,0,.5);
+}
+
+.btn-out button:hover {
+    background: red;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 5px red,
+                0 0 25px red,
+                0 0 50px red,
+                0 0 100px red;
+}
+
+.btn-home :hover {
+    background: rgb(21 128 61);
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgb(21 128 61),
+                0 0 25px rgb(21 128 61),
+                0 0 50px rgb(21 128 61),
+                0 0 100px rgb(21 128 61);
+}
+

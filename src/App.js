@@ -3,22 +3,22 @@ import './App.css';
 // REACT FILES ON THIS PROJECT.......
 import React, {Component} from 'react';
 // COMPONENTS FILES ON THIS PROJECT.....
-import Register from './components/Register/Register';
-import SignIn from './components/Sign-In/SignIn';
 import Navigation from './components/Navigation/Navigation';
-import Logo from './components/Logo/Logo';
+// import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
+import Home from './components/Home/Home';
 // NPM PACKAGES ON THIS PROJECT......
-import ParticlesBg from 'particles-bg';
+import SignInRegisterDisplay from './components/SignIn&RegisterDisplay/SignIn&RegisterDisplay';
 
 const initialState = {
     input: '',
     imageURL: '',
     box: {},
-    route: 'signIn',
+    route: 'homepage',
     isSignedIn: false,
+    watch: true,
     user: {
         id: '',
         name: '',
@@ -34,6 +34,11 @@ class App extends Component {
         super();
         this.state = initialState
         }
+    
+    handleClickWatch = (boolean) => {
+        this.setState({watch: boolean})
+        this.setState({route: 'SignIn&RegisterDisplay'})
+    }
 
     loadUser = (data) => {
         this.setState({user: {
@@ -73,7 +78,7 @@ class App extends Component {
 
         // fetch("https://api.clarifai.com/v2/models/face-detection/outputs", returnClarifaiRequestOption(this.state.input))
         //     .then(response => response.json())
-            fetch('https://zealous-unleashed-frown.glitch.me/imageurl', {
+            fetch('http://localhost:3001/imageurl', {
                 method: "post",
                 headers: {"Content-Type": "application/json"},
             // the body contains what you have in the state or what you want to send to the server
@@ -85,12 +90,13 @@ class App extends Component {
             })
             .then(response => response.json())
             .then(response => {
+                console.log(response)
                 if (response) {
                 // This line of code wants to update the amount of entries a user has made
                 // by using the put method to update the user id and in so doing sends an object using JSON.stringify.
                 // and when the server receives this JSON object. Another line of runs by checking if the id sent through JSON
                 // matches the users id that was iterated using the forEach method
-                    fetch('https://zealous-unleashed-frown.glitch.me/image', {
+                    fetch('http://localhost:3001/image', {
                         method: "put",
                         headers: {"Content-Type": "application/json"},
                     // the body contains what you have in the state or what you want to send to the server
@@ -129,21 +135,33 @@ class App extends Component {
 
     render() {
         return(
-            <div className='App'>
-                <ParticlesBg color="#f7fff9" type="cobweb" bg={true} />
-                <Navigation isSignedIn={this.state.isSignedIn} onRouteChange={this.onRouteChange} />
+            <div className='app-container'>
                 {/* signing into the app requires a conditional statement */}
                 { this.state.route === 'home' ? 
                     <div>
-                        <Logo />
+                        <Navigation
+                            isSignedIn={this.state.isSignedIn}
+                            onRouteChange={this.onRouteChange}
+                            handleClickWatch={this.handleClickWatch}
+                            watch={this.state.watch}
+                        />
+                        {/* <Logo /> */}
                         <Rank name={this.state.user.name} entries={this.state.user.entries} />
-                        <ImageLinkForm onInputChange={this.onInputChange} onPictureSubmit={this.onPictureSubmit}/>
+                        <ImageLinkForm
+                        onInputChange={this.onInputChange}
+                        onPictureSubmit={this.onPictureSubmit}/>
                         <FaceRecognition box={this.state.box} imageURL={this.state.imageURL} />
                     </div>
-                : (
-                    this.state.route === 'signIn'
-                    ? <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
-                    : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+                :
+                (
+                    this.state.route === 'homepage'
+                    ? <Home handleClickWatch={this.handleClickWatch} />
+                    : <SignInRegisterDisplay
+                    loadUser={this.loadUser}
+                    onRouteChange={this.onRouteChange}
+                    handleClickWatch={this.handleClickWatch}
+                    watch={this.state.watch}
+                    />
                 )
             }
             </div>

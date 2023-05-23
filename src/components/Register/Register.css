@@ -1,0 +1,32 @@
+.register {
+    margin-top: 60px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.6);
+   }
+   
+   .cursor {
+       cursor: pointer;
+   }
+   
+   .h1{
+       font-size: xx-large;
+   }
+
+   .svg-color {
+    color: #000000; 
+}
+
+   /* FOR PHONE VIEWING */
+
+@media only screen and (max-width: 500px) {
+    .register-sm{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-sm{
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+}
+   

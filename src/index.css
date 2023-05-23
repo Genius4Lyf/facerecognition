@@ -2,19 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+html,
+body,
+#root {
+  height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to left, rgba(26, 6, 96, 1)25%, rgba(12, 64, 61, 1)100%);
-  color: rgb(39, 130, 39);
+  background: #dcdcdc;
   text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app-container {
+  height: 100%;
+  width: 100%;
+  /* Add other responsive styles here */
 }
+
+/* FONT ON THE WEBPAGE */
+
+@font-face {
+  font-family: 'Space Rangers';
+  src: url('./fonts/SpaceRangers.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Advent';
+  src: url('./fonts/AdventPro.ttf') format('truetype');
+}
+
+.txt-font{
+  font-family: 'Advent', sans-serif;
+  color: #292929;
+}
+
+.font-1 {
+  font-family: 'Space Rangers', sans-serif;
+  font-size: xx-large;
+}
+
+.font-2 {
+  font-family: 'Advent', sans-serif;
+  font-size: x-large;
+}
+
+.button-font{
+  font-family: 'Space Rangers', sans-serif;
+}
+
+.button-font-2{
+  font-family: 'Advent', sans-serif;
+}
+
+.nav-h1-font{
+  font-family: 'Space Rangers', sans-serif;
+  color: rgba(0,0,0,.5)
+}
+
+form input{
+  font-family: 'Advent', sans-serif;
+}
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #999999;
+}
+

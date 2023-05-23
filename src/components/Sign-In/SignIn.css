@@ -1,7 +1,26 @@
 .signIn {
-    background: linear-gradient(to right, rgba(26, 6, 96, 1)25%, rgba(12, 64, 61, 1)100%);
+ margin-top: 80px;
+ box-shadow: 0 5px 10px rgba(0,0,0,.6);
 }
 
 .cursor {
     cursor: pointer;
+}
+
+.h1{
+    font-size: xx-large;
+}
+
+.svg-color {
+    color: #000000; 
+}
+
+/* FOR PHONE VIEWING */
+
+@media only screen and (max-width: 500px) {
+    .signin-sm{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
