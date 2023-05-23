@@ -22,17 +22,6 @@ class ImageLinkForm extends React.Component {
                     </div>
                 </div>
             </div>
-            <footer className="pv4 ph3 ph5-ns tc footer">
-                        <div className="mt4">
-                            <a href="https://twitter.com/DannyKings11" className="f6 link dim gray dib mr3 mr4-ns">Help</a>
-                            <a href="https://twitter.com/DannyKings11" className="f6 link dim gray dib mr3 mr4-ns">Send feedback</a>
-                            <a href="https://twitter.com/DannyKings11" className="f6 link dim gray dib mr3 mr4-ns">Privacy</a>
-                            <a href="https://twitter.com/DannyKings11" className="f6 link dim gray dib">Terms</a>
-                        </div>
-                        <p className="text-center text-gray-500 text-xs">
-                                    &copy;2023 Genius Engine. All rights reserved.
-                        </p>
-                    </footer>
             </>
         )
     }

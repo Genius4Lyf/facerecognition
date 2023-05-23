@@ -6,3 +6,21 @@
     justify-content: center;
     cursor: pointer;
   }
+
+  @media only screen and (max-width: 500px) {
+    .image-sm{
+        display: flex;
+        justify-content: center;
+        width: 400px;
+        height: auto;
+    }
+
+    .bounding-box-sm {
+      position: absolute;
+      box-shadow: 0 0 0 3px #149df2 inset;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      cursor: pointer;
+    }
+}
