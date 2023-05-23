@@ -18,7 +18,7 @@ class HomePage extends React.Component {
     // Simulating an asynchronous operation
     setTimeout(() => {
       this.setState({ isLoading: false });
-    }, 1000);
+    }, 3000);
   }
   
   render() {
