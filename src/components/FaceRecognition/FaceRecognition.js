@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './FaceRecognition.css';
 
 function FaceRecognition ({ imageURL, box }) {
+
   return (
     <div className='center ma' style={{display: 'flex', justifyContent: 'center'}}>
       <div className='absolute mt2'>
