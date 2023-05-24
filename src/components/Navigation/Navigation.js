@@ -1,9 +1,11 @@
 import brainLogo3 from './brainLogo3.png';
-import './Nav.css'
+import './Nav.css';
+
 
 function Navigation ({onRouteChange, isSignedIn, handleClickWatch}) {
     if (isSignedIn) {
         return (
+            <>
             <nav className='nav-m nav-bg shadow-2xl' style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                 <div style={{ display: 'flex', justifyContent: 'flex-start', alignContent: 'center', alignItems: 'center' }}>
                 <span className='font-semibold nav-h1-font' style={{ marginLeft: '10px'}}>SMARTBRAIN</span>
@@ -22,6 +24,7 @@ function Navigation ({onRouteChange, isSignedIn, handleClickWatch}) {
                     </div>
                 </div>
             </nav>
+            </>
         )
     } 
 }

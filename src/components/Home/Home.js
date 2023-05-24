@@ -35,7 +35,7 @@ class HomePage extends React.Component {
             );
         } else {
           return (
-            <div className='body'>  
+            <div className='body'> 
               <main  className="container mx-auto p-4 main-home main-sm">
                 <section  className="br3 shwadow-5 w-full max-w-xs main-sm">
                   <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
@@ -66,7 +66,7 @@ class HomePage extends React.Component {
                         </div>
                     </Tilt>
                 </div>
-              </main>
+              </main> 
               <Footer />
             </div>
           );

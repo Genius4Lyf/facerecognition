@@ -4,6 +4,7 @@ import FaceRecognition from "../FaceRecognition/FaceRecognition";
 import Rank from "../Rank/Rank";
 import Navigation from "../Navigation/Navigation";
 import Spinner from "../Spinner/Spinner";
+import ParticlesBg from 'particles-bg';
 
 class Dashboard extends React.Component {
     constructor(){
@@ -37,6 +38,7 @@ class Dashboard extends React.Component {
 
             return (
                 <>
+                    <ParticlesBg color="#dcdcdc" type="cobweb" bg={true} />
                     <Navigation isSignedIn={isSignedIn} onRouteChange={onRouteChange} handleClickWatch={handleClickWatch} watch={watch} />
                     <Rank name={name} entries={entries} />
                     <ImageLinkForm onInputChange={onInputChange} onPictureSubmit={onPictureSubmit} />

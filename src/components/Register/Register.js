@@ -3,6 +3,7 @@ import '../Sign-In/SignIn.css';
 import brainLogo3 from '../Home/brainLogo3.png'
 import './Register.css';
 import Spinner from '../Spinner/Spinner';
+import ParticlesBg from 'particles-bg';
 
 class Register extends React.Component{
     constructor(){
@@ -77,6 +78,7 @@ class Register extends React.Component{
 
             return (
                 <>
+                    <ParticlesBg color="#292929" type="cobweb" bg={true} />
                     <div className='register-sm' style={{display: 'flex', justifyContent: 'space-around'}}>
                         <div className='logo-sm' style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
                                 <h1 className="font-bold mb-4 font-1">SMART</h1>

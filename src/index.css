@@ -2,19 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body,
-#root {
+body {
   height: 100%;
   margin: 0;
-  background: #dcdcdc;
+  padding: 0;
+  background: #dcdcdc;/* w3c */
   text-align: center;
 }
 
-.app-container {
-  height: 100%;
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
   width: 100%;
-  /* Add other responsive styles here */
+  padding: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #999999;
 }
 
 /* FONT ON THE WEBPAGE */
@@ -60,18 +64,6 @@ body,
 form input{
   font-family: 'Advent', sans-serif;
 }
-
-.footer{
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 20px;
-  text-align: center;
-  font-size: 12px;
-  color: #999999;
-}
-
 
 /* LOADING INDICATORS */
 

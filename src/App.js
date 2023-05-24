@@ -99,7 +99,7 @@ class App extends Component {
                 // by using the put method to update the user id and in so doing sends an object using JSON.stringify.
                 // and when the server receives this JSON object. Another line of runs by checking if the id sent through JSON
                 // matches the users id that was iterated using the forEach method
-                    fetch('https://fair-teal-fly-wig.cyclic.app/image', {
+                    fetch('http://localhost:3001/image', {
                         method: "put",
                         headers: {"Content-Type": "application/json"},
                     // the body contains what you have in the state or what you want to send to the server
@@ -138,7 +138,7 @@ class App extends Component {
 
     render() {
         return(
-            <div className='app-container'>
+            <div className='App'>
                 {/* signing into the app requires a conditional statement */}
                 <div>
                     { this.state.route === 'home' ? 

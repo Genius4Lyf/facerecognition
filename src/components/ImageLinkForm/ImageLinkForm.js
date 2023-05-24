@@ -2,23 +2,20 @@ import React from 'react';
 import './ImageLinkForm.css';
 import ParticlesBg from 'particles-bg';
 
-
 class ImageLinkForm extends React.Component {
-
     render() {
         const {onInputChange, onPictureSubmit} = this.props
-        
         return (
             <>
+            <ParticlesBg color="#292929" type="cobweb" bg={true} />
             <div className='bg-body btn'>
-                <ParticlesBg color="#292929" type="cobweb" bg={true} />
-                <p className="f3 text txt-font">
+                <div className="f3 text txt-font">
                     This Magic Brain will detect faces in your pictures. Give it a try<br/>
                     <ul>
                         <li>copy image URL</li>
                         <li>insert it into the box</li>
                     </ul>
-                </p>
+                </div>
                 <div className="center">
                     <div className="form form-sm center pa3 br3 shadow-5">
                         <input className="f4 pa2 w-60 right input-text" type="text" onChange={onInputChange}/>
@@ -44,7 +41,7 @@ class ImageLinkForm extends React.Component {
                     <span className="f6 db">LinkedIn</span>
                 </a>
                 <p className="text-center text-gray-500 text-xs">
-                            &copy;2023 Genius Engine. All rights reserved.
+                    &copy;2023 Genius Engine. All rights reserved.
                 </p>
             </footer>
             </>

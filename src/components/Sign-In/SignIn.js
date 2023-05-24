@@ -2,6 +2,7 @@ import React from 'react';
 import './SignIn.css';
 import brainLogo3 from '../Home/brainLogo3.png';
 import Spinner from '../Spinner/Spinner';
+import ParticlesBg from 'particles-bg';
 
 class SignIn extends React.Component {
     constructor(){
@@ -20,6 +21,7 @@ class SignIn extends React.Component {
           this.setState({ isLoading: false });
         }, 1000);
     }
+
 
     onEmailChange = (event) => {
         this.setState({signInEmail: event.target.value})
@@ -70,6 +72,7 @@ class SignIn extends React.Component {
 
             return(
                 <>
+                    <ParticlesBg color="#292929" type="cobweb" bg={true} />
                     <div className='signin-sm' style={{display: 'flex', justifyContent: 'space-around'}}>
                         <div className='logo-sm' style={{display: 'flex', alignItems: 'center'}}>
                             <h1 className="font-bold mb-4 font-1">SMART</h1>
